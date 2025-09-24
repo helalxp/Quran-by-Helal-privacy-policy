@@ -1,0 +1,1 @@
+# Quran-by-Helal-privacy-policy
