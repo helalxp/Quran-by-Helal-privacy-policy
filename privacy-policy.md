@@ -1,7 +1,7 @@
 # Privacy Policy for Quran by Helal
 
 **Effective Date:** October 17, 2025
-**Last Updated:** October 17, 2025
+**Last Updated:** October 29, 2025
 
 ## Introduction
 
@@ -41,6 +41,57 @@ We may collect information about how the App is accessed and used ("Usage Data")
 - Crash reports and performance data
 - Location information (city name and country code only, sent to analytics)
 
+### User Feedback and Suggestions
+We collect feedback and suggestions that you voluntarily submit through our in-app feedback feature:
+- Your feedback message or suggestion text (text only)
+- App version and device information (automatically included for troubleshooting)
+- Submission timestamp
+
+**Content Moderation:**
+To maintain a respectful environment, all feedback submissions are automatically screened before being stored:
+- **Spam Detection**: Identifies promotional content and repetitive submissions
+- **Profanity Filter**: Blocks inappropriate language in Arabic and English
+- **Malicious Content Detection**: Identifies and blocks suspicious URLs and harmful content
+- **Automated Filtering**: Content is validated in real-time before submission
+- **User Feedback**: You receive immediate notification if content is rejected, with a clear explanation
+- **Privacy**: All moderation is automated - no human review unless necessary for app improvement
+
+Inappropriate content is rejected immediately and is not stored. Only content that passes our automated screening is saved to Firebase Firestore.
+
+**Important Notes:**
+- All feedback submission is completely voluntary
+- We do NOT collect any personal identifiers (name, email, phone number) with feedback
+- Feedback is stored securely on Firebase Firestore servers
+- You control what information you share with us
+- Rejected content is not stored or retained
+
+### Advertising
+We use Google AdMob to display optional rewarded ads that help support app development:
+
+**When ads are shown:**
+- ONLY when you explicitly tap "Support the Developer" button
+- You can always cancel before watching
+- Ads are completely voluntary - never forced
+
+**What data Google AdMob may collect:**
+- Device information (device type, OS version)
+- Ad interaction data (views, clicks)
+- IP address (for ad targeting and fraud prevention)
+- Advertising ID (can be reset in device settings)
+
+**What we do NOT share with AdMob:**
+- Your location data
+- Your reading history
+- Bookmarks or personal preferences
+- Any personally identifiable information
+
+**Your control:**
+- You choose when to watch ads (by tapping Support button)
+- You can opt out of personalized ads in device settings
+- You can reset your advertising ID at any time
+
+For more information about Google's use of data, see: [Google Privacy Policy](https://policies.google.com/privacy)
+
 ### Local Storage
 The App may store data locally on your device including:
 - Your reading preferences and settings
@@ -55,6 +106,8 @@ We use the collected data for:
 - Improving user experience and App functionality
 - Analyzing usage patterns to enhance features
 - Detecting and preventing technical issues
+- Reviewing user feedback and suggestions to improve the App
+- Understanding user needs and priorities for future updates
 
 ## Data Sharing
 
@@ -62,16 +115,31 @@ We do not sell, trade, or rent your personal information to third parties.
 
 ### What We Share with Third Parties
 
-**Firebase Analytics (Google):**
-- App usage patterns (features used, screen views, session duration)
-- Device information (device type, OS version)
-- City name and country code (for regional analytics)
-- App performance and crash data
-- NO GPS coordinates, NO personal identifiers, NO reading content
+**Firebase (Google):**
+- **Firebase Analytics**: App usage patterns (features used, screen views, session duration), device information, city name and country code, app performance data
+- **Firebase Firestore**: User feedback and suggestions (text messages only, app version, device info, timestamps)
+- NO GPS coordinates, NO personal identifiers, NO reading content, NO screenshots
+
+**Google AdMob:**
+- **Rewarded Ads** (voluntary only): Device information, advertising ID, ad interaction data
+- Only shown when you tap "Support the Developer" button
+- You can cancel before watching
+- See "Advertising" section above for full details
 
 **Audio Streaming Services:**
 - Quran recitation audio is streamed from public Islamic content providers (everyayah.com, quran.com)
 - Only audio file requests are sent, no personal data
+
+**Cloudflare Workers:**
+- **Purpose**: Secure HTTPS proxy service for Quran tafsir (interpretation) content
+- **What we share**: Anonymous requests about which Quranic verses you're viewing (surah and ayah numbers only)
+- **What we DON'T share**: No personal information, no user identifiers, no location data, no reading history
+- **Security**: All data is encrypted in transit using HTTPS/SSL
+- **Caching**: Cloudflare may temporarily cache tafsir responses to improve loading speed
+- **Privacy**: Cloudflare's edge network processes requests anonymously
+- **Learn more**: [Cloudflare Privacy Policy](https://www.cloudflare.com/privacypolicy/)
+
+This service helps us provide secure, fast access to Islamic scholarly interpretations while protecting your privacy.
 
 **What We NEVER Share:**
 - Your precise GPS coordinates
@@ -83,6 +151,8 @@ We do not sell, trade, or rent your personal information to third parties.
 
 Our App uses third-party services that have their own privacy policies:
 - **Firebase Analytics**: [Google Privacy Policy](https://policies.google.com/privacy)
+- **Google AdMob**: [Google Privacy Policy](https://policies.google.com/privacy) | [AdMob Policy](https://support.google.com/admob/answer/6128543)
+- **Cloudflare Workers**: [Cloudflare Privacy Policy](https://www.cloudflare.com/privacypolicy/)
 - **Quran Audio Providers**: Public Islamic content services
 
 ## Permissions We Request
@@ -107,7 +177,16 @@ All permissions are used solely for their stated purposes and are essential for 
 
 ## Data Security
 
-We implement appropriate security measures to protect your data against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure.
+We implement appropriate security measures to protect your data against unauthorized access, alteration, disclosure, or destruction:
+
+- **HTTPS Encryption**: All network communications use HTTPS/SSL encryption to protect data in transit
+- **Secure APIs**: All external API requests are made through encrypted connections
+- **Input Validation**: User inputs are sanitized to prevent malicious content
+- **Content Filtering**: Automated moderation protects against inappropriate submissions
+- **Firebase Security**: User data stored in Firebase is protected by Google's enterprise-grade security
+- **Local Storage**: Sensitive data (like your reading history and bookmarks) is stored only on your device
+
+However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.
 
 ## Data Retention
 
@@ -142,14 +221,25 @@ If you have any questions about this Privacy Policy, please contact us at:
 
 ---
 
-## Summary of Changes (October 2025)
+## Summary of Changes
 
-This privacy policy has been updated to provide more detailed and accurate information about:
+### October 29, 2025 Update
+- **NEW**: Cloudflare Workers service disclosure for secure HTTPS proxy
+- **NEW**: Content moderation system for user feedback (spam, profanity, malicious content filtering)
+- **UPDATED**: Enhanced data security section with HTTPS encryption details
+- **UPDATED**: Expanded third-party services list to include Cloudflare
+
+### October 17, 2025 Update
+This privacy policy was created to provide detailed and accurate information about:
 - Precise location data collection (GPS coordinates) for prayer times and Qibla features
 - Specific details about what data is shared with Firebase Analytics
 - Complete list of app permissions and their purposes
 - Clearer explanation of data retention practices
+- User feedback and suggestions collection feature (text only)
+- Firebase Firestore usage for feedback management
+- Google AdMob rewarded ads for voluntary developer support
+- Detailed disclosure of ad data collection and user control options
 
 ---
 
-*This privacy policy was last updated on October 17, 2025.*
+*This privacy policy was last updated on October 29, 2025.*
